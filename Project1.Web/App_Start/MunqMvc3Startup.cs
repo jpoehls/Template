@@ -72,7 +72,7 @@ namespace Project1.Web.App_Start
 
         private static User FetchCurrentUser(HttpContext ctx, IocContainer container)
         {
-            return container.Resolve<ISession>().Query<User>().Single(u => u.Id == int.Parse(ctx.User.Identity.Name));
+            return container.Resolve<ISession>().Query<User>().SingleOrDefault(u => u.Id == int.Parse(ctx.User.Identity.Name));
         }
     }
 }

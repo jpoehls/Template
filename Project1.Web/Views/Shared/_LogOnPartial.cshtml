@@ -1,4 +1,4 @@
-﻿@if (Request.IsAuthenticated)
+﻿@if (Project1.Core.Domain.User.Current != null)
 {
     <li>@Html.ActionLink(Project1.Core.Domain.User.Current.Email, "Index", "Account", new { Area = "" }, null)</li>
     if (Project1.Core.Domain.User.Current.IsAdmin)

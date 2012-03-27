@@ -22,8 +22,11 @@ namespace Project1.Web.Infrastructure
         IEnumerable<string> YieldRoles(string username)
         {
             var user = GetUser(username);
-            if (user.IsAdmin) yield return "Admin";
-            if (user.IsContentAdmin) yield return "Content Admin";
+            if (user != null)
+            {
+                if (user.IsAdmin) yield return "Admin";
+                if (user.IsContentAdmin) yield return "Content Admin";
+            }
         }
 
         public override void CreateRole(string roleName)
