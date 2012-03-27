@@ -66,15 +66,6 @@ namespace Project1.Core.Domain
         public virtual bool IsAdmin { get; set; }
         public virtual bool IsContentAdmin { get; set; }
 
-        protected bool SuperAdmin
-        {
-            set
-            {
-                this.IsAdmin = value;
-                this.IsContentAdmin = value;
-            }
-        }
-
         public static User CreateNewUser(ISession session, string email, Password password)
         {
             email = email.ToLower();
@@ -98,7 +89,8 @@ namespace Project1.Core.Domain
                 var isFirstUser = session.Query<User>().Any() == false;
                 if (isFirstUser)
                 {
-                    user.SuperAdmin = true;
+                    user.IsAdmin = true;
+                    user.IsContentAdmin = true;
                     session.Save(user);
                 }
             }
