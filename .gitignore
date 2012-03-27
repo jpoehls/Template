@@ -48,4 +48,3 @@ _ReSharper*/
 #NuGet
 packages/
 /*.Web/config.hbm.xml
-*.Web/App_Data/CMS/*
