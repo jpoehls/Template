@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+<h2>@ViewBag.Title</h2>
+<ul>
+    <li>@Html.AdminActionLink("Elmah", "Elmah")</li>
+    <li>@Html.AdminActionLink("Manage users", "ManageUsers")</li>
+    <li><a href="/meek/list/">CMS</a></li>
+</ul>

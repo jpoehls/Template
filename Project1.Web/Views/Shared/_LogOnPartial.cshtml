@@ -1,0 +1,13 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <li>@Html.ActionLink(Project1.Core.Domain.User.Current.Email, "Index", "Account", new { Area = "" }, null)</li>
+    if (Project1.Core.Domain.User.Current.IsAdmin)
+    {
+    <li>@Html.ActionLink("Admin", "Index", "Admin", new { Area = "" }, null)</li>
+    }
+    <li>@Html.ActionLink("Log Off", "LogOff", "Account", new { Area = "" }, null)</li>
+}
+else
+{
+    <li>@Html.ActionLink("Log On", "LogOn", "Account", new { Area = "" }, null)</li>
+}

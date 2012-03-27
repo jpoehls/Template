@@ -1,0 +1,7 @@
+﻿@model MvcFlash.Core.Models.FlashContext
+<div class="container">
+    <div id="@Model.Message.Type-@Model.Index" class="alert alert-@Model.Message.Type fade in" data-alert="alert" style="margin-top:20px">
+        <a class="close" data-dismiss="alert">×</a>
+        <p>@Model.Message.Text</p>
+    </div>
+</div>        

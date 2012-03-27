@@ -1,0 +1,57 @@
+﻿@using Noodles.Web.Helpers
+@model Project1.Web.Areas.Admin.Models.ManageUsersModel
+@{
+    ViewBag.Title = "Manage users";
+}
+<h2>@(ViewBag.Title)</h2>
+@using (Html.BeginForm("Index", "ManageUsers", FormMethod.Get))
+{
+    <label for="Q">
+        Email</label>
+    <input type="text" id="Q" name="Q" value="@Model.SearchParameters.Maybe(x => x.Q)"/>
+    <label>
+        Is admin</label>
+    <label>
+        N/A
+        <input type="radio" name="IsAdmin" value="" @(Model.SearchParameters.IsAdmin == null ? "checked" : "") /></label>
+    <label>
+        Yes
+        <input type="radio" name="IsAdmin" value="true" @(Model.SearchParameters.IsAdmin == true ? "checked" : "") /></label>
+    <label>
+        No
+        <input type="radio" name="IsAdmin" value="false" @(Model.SearchParameters.IsAdmin == false ? "checked" : "") /></label>
+
+    <input type="submit" value="Search" />
+}
+@if (Model.Users != null)
+{
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                Is admin
+            </th>
+            <th>
+                Is content admin
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Email
+                </td>
+                <td>@user.IsAdmin
+                </td>
+                <td>@user.IsContentAdmin
+                </td>
+                <td>@NoodlesHelper.NodeMethodsDropdown(user)
+                </td>
+            </tr>
+        }
+    </table>
+}
