@@ -76,6 +76,9 @@
     <Reference Include="MvcFlash.Core">
       <HintPath>..\packages\MvcFlash.1.0.0\lib\MvcFlash.Core.dll</HintPath>
     </Reference>
+    <Reference Include="MvcMiniProfiler">
+      <HintPath>..\packages\MiniProfiler.1.9\lib\net40\MvcMiniProfiler.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
@@ -138,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Meek.cs" />
+    <Compile Include="App_Start\MiniProfiler.cs" />
     <Compile Include="App_Start\MiscStartup.cs" />
     <Compile Include="App_Start\MunqMvc3Startup.cs" />
     <Compile Include="App_Start\RegisterDatatablesModelBinder.cs" />

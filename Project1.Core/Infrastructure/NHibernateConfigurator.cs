@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using Harden.ValidationAttributes;
+using MiniProfilerContrib.NHibernate;
 using Munq;
 using NHibernate;
 using NHibernate.Instantiation;
@@ -30,8 +31,8 @@ namespace Project1.Core.Infrastructure
             //Environment.UseReflectionOptimizer = false;
             configuration.SetProperty(Environment.GenerateStatistics, "true");
             configuration.SetProperty(Environment.BatchSize, "10");
-            //configuration.SetProperty(Environment.ConnectionDriver,
-            //                          typeof(ProfiledSql2008ClientDriver).AssemblyQualifiedName);
+            configuration.SetProperty(Environment.ConnectionDriver,
+                                      typeof(ProfiledSql2008ClientDriver).AssemblyQualifiedName);
 
             new SchemaUpdate(configuration).Execute(s => Debug.WriteLine(s), true);
 

@@ -43,6 +43,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="MiniProfiler.Contrib.NHibernate">
+      <HintPath>..\packages\MiniProfiler.Contrib.NHibernate.1.0.4289.24845\lib\net40\MiniProfiler.Contrib.NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Munq.IocContainer">
       <HintPath>..\packages\Munq.IocContainer.3.1.4\Lib\Munq.IocContainer.dll</HintPath>
     </Reference>
