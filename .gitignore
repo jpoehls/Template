@@ -46,4 +46,5 @@ _ReSharper*/
 ~$*
 
 #NuGet
+#packages/
 /*.Web/config.hbm.xml
