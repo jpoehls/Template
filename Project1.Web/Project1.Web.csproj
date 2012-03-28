@@ -63,8 +63,9 @@
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Munq.IocContainer">
-      <HintPath>..\packages\Munq.IocContainer.3.1.4\Lib\Munq.IocContainer.dll</HintPath>
+    <Reference Include="Munq.IocContainer, Version=3.0.4327.33676, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Munq.IocContainer.3.1.1\Lib\Munq.IocContainer.dll</HintPath>
     </Reference>
     <Reference Include="Munq.MVC3">
       <HintPath>..\packages\Munq.MVC3.3.1.2\Lib\Munq.MVC3.dll</HintPath>
@@ -483,12 +484,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50161</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://template.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
