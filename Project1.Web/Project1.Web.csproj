@@ -147,9 +147,11 @@
     <Compile Include="App_Start\MunqMvc3Startup.cs" />
     <Compile Include="App_Start\RegisterDatatablesModelBinder.cs" />
     <Compile Include="App_Start\RegisterNoodles.cs" />
+    <Compile Include="App_Start\SystemTimeStartup.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ElmahController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageUsersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Models\ManageUsersModel.cs" />
     <Compile Include="Areas\Admin\Models\SearchUsersModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -161,6 +163,7 @@
     </Compile>
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\HtmlExtensions.cs" />
+    <Compile Include="Helpers\SystemTimeCookieHelpers.cs" />
     <Compile Include="Infrastructure\RoleProvider.cs" />
     <Compile Include="Infrastructure\ImplicitOperatorBinderProvider.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -455,6 +458,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="App_Data\CMS\beaa1df6-7f77-4efd-983a-bc9a0ca62c06" />
+    <Content Include="Areas\Admin\Views\Settings\SystemTime.cshtml" />
     <None Include="Content\DataTables-1.9.0\extras\TableTools\media\images\psd\collection.psd" />
     <None Include="Content\DataTables-1.9.0\extras\TableTools\media\images\psd\copy document.psd" />
     <None Include="Content\DataTables-1.9.0\extras\TableTools\media\images\psd\file_types.psd" />

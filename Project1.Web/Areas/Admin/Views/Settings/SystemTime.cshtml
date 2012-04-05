@@ -1,0 +1,19 @@
+﻿@model DateTimeOffset?
+@{
+    ViewBag.Title = "System Time";
+}
+<h2>@(ViewBag.Title)</h2>
+<p>
+    Current UTC time: @DateTimeOffset.UtcNow
+</p>
+<p>
+    System Time override: @(Model.HasValue ? Model.Value.ToString() : "not set")
+</p>
+<form method="POST">
+<fieldset>
+    <legend>Set new System Time override</legend>
+    <input type="text" name="SystemTime" value="@(Model ?? DateTimeOffset.UtcNow)"/>
+    <input type="submit" name="update" value="submit" />
+    <input type="submit" name="clear" value="clear" />
+</fieldset>
+</form>

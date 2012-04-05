@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Helpers\AdminOnlyAttribute.cs" />
     <Compile Include="Helpers\PronounceablePasswordGenerator.cs" />
+    <Compile Include="Helpers\SystemTime.cs" />
     <Compile Include="Infrastructure\Email.cs" />
     <Compile Include="Infrastructure\NHibernateConfigurator.cs" />
     <Compile Include="Infrastructure\Password.cs" />
