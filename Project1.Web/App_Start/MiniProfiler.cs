@@ -2,10 +2,12 @@ using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Linq;
-using MvcMiniProfiler;
-using MvcMiniProfiler.MVCHelpers;
 using Microsoft.Web.Infrastructure;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using StackExchange.Profiling;
+using StackExchange.Profiling.MVCHelpers;
+using StackExchange.Profiling.SqlFormatters;
+
 //using System.Data;
 //using System.Data.Entity;
 //using System.Data.Entity.Infrastructure;
@@ -25,7 +27,7 @@ namespace Project1.Web.App_Start
     {
         public static void PreStart()
         {
-            MiniProfiler.Settings.SqlFormatter = new MvcMiniProfiler.SqlFormatters.SqlServerFormatter();
+            MiniProfiler.Settings.SqlFormatter = new SqlServerFormatter();
 
 			// To profile a standard DbConnection: 
 			// var profiled = new ProfiledDbConnection(cnn, MiniProfiler.Current);

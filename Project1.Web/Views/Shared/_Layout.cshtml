@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using StackExchange.Profiling;
+<!DOCTYPE html>
 <html>
 <head>
+    @* optional (enable client timing framework) *@
+    @this.InitClientTimings()
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    @* optional time scripts in the header *@
+    @this.TimeScript("Content Site.css",
+       @<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>)
+    @* etc *@
     <script src="@Url.Content("~/Scripts/jquery-ui-1.8.18.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
@@ -11,7 +17,6 @@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="/Scripts/Noodles/Noodles.js"></script>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    @MvcMiniProfiler.MiniProfiler.RenderIncludes() 
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -45,5 +50,6 @@
                 @Html.ActionLink("Contact us", "Contact", "Home", new { Area = "" }, null)
             </footer>
     </div>
+    @MiniProfiler.RenderIncludes()
 </body>
 </html>
