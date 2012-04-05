@@ -64,7 +64,7 @@
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="MiniProfiler">
+    <Reference Include="MiniProfiler, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
       <HintPath>..\packages\MiniProfiler.2.0.1\lib\net40\MiniProfiler.dll</HintPath>
     </Reference>
     <Reference Include="Munq.IocContainer, Version=3.0.4327.33676, Culture=neutral, processorArchitecture=MSIL">
@@ -380,7 +380,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Project1.Core\Project1.Core.csproj">
       <Project>{8EA13459-574A-4D55-8800-9E08FCFBF696}</Project>
-      <Name>Olympics.Core</Name>
+      <Name>Project1.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
