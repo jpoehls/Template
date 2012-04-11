@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Harden;
 using Noodles.Infrastructure;
 using Project1.Web.App_Start;
 
@@ -16,7 +17,16 @@ namespace Project1.Web.App_Start
         {
             GlobalFilters.Filters.Add(new GlobalFixUserExceptionsAttribute());
             GlobalFilters.Filters.Add(new ModelStateTempDataTransferAttribute());
-
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
+            Noodles.NodeMethodsExtension.ShowMethodRules.Insert(0,
+                (target, info) => Allow.Call(target, info) ? null as bool? : false);
+            Noodles.NoodleResultBuilderExtension.AddExceptionHandler<ValidationException>((ex, cc) =>
+            {
+                foreach (var error in ex.Errors)
+                {
+                    cc.Controller.ViewData.ModelState.AddModelError(error.Field, error.Message);
+                }
+            });
         }
     }
 

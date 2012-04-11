@@ -145,7 +145,7 @@ namespace Project1.Core.Domain
 
         public virtual bool? AllowGrantAdmin()
         {
-            if (Id.ToString() == HttpContext.Current.User.Identity.Name)
+            if (this.IsAdmin || Id.ToString() == HttpContext.Current.User.Identity.Name)
                 return false;
             else return null;
         }
@@ -160,9 +160,9 @@ namespace Project1.Core.Domain
 
         public virtual bool? AllowRevokeAdmin()
         {
-            if (Id.ToString() == HttpContext.Current.User.Identity.Name)
+            if (this.IsAdmin == false || Id.ToString() == HttpContext.Current.User.Identity.Name)
                 return false;
-            else return null;
+            return null;
         }
 
 
@@ -173,13 +173,27 @@ namespace Project1.Core.Domain
             _session.Save(this);
             _session.Flush();
         }
-        
+
+        public virtual bool? AllowGrantContentAdmin()
+        {
+            if (this.IsContentAdmin)
+                return false;
+            else return null;
+        }
+
         [AdminOnly, Show]
         public virtual void RevokeContentAdmin()
         {
             this.IsContentAdmin = false;
             _session.Save(this);
             _session.Flush();
+        }
+
+        public virtual bool? AllowRevokeContentAdmin()
+        {
+            if (this.IsContentAdmin == false)
+                return false;
+            else return null;
         }
 
         #endregion
