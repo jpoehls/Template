@@ -1,35 +1,19 @@
-﻿@model Project1.Web.Models.AccountModel
+﻿@using Project1.Web.Controllers
+@using Project1.Web.Models
 
 @{
     ViewBag.Title = "Account details";
 }
 
-<h2>Account details</h2>
+<h2>@(ViewBag.Title)</h2>
 <p>
     Use the form below to update your account details. 
 </p>
 
-<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
-    <div>
-        <fieldset>
-            <legend>Account Information</legend>
-
-            <div class="editor-label">
-                @Html.LabelFor(m => m.Email)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(m => m.Email)
-                @Html.ValidationMessageFor(m => m.Email)
-            </div>
-
-            <p>
-                <input type="submit" value="Update" />
-            </p>
-        </fieldset>
-    </div>
+@using (var form = Html.FormForAction((AccountController ctlr, AccountModel b) => ctlr.Index(b)))
+{
+    form.DisplayName = "Update";
+    form.Render();
 }
+
 @Html.ActionLink("Change password", "ChangePassword")

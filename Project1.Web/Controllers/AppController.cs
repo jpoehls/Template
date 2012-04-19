@@ -33,7 +33,7 @@ namespace Project1.Web.Controllers
 
         }
 
-        private void Invoke(object target, IObjectMethod method, object[] args)
+        private void Invoke(INodeMethod method, object[] args)
         {
             method.Invoke(args);
             //var log = new Core.Domain.EventLog()

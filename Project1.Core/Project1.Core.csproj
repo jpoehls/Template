@@ -49,8 +49,9 @@
     <Reference Include="Munq.IocContainer">
       <HintPath>..\packages\Munq.IocContainer.3.1.4\Lib\Munq.IocContainer.dll</HintPath>
     </Reference>
-    <Reference Include="NhCodeFirst">
-      <HintPath>..\packages\NhCodeFirst.1.1.46\lib\net40\NhCodeFirst.dll</HintPath>
+    <Reference Include="NhCodeFirst, Version=1.1.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NhCodeFirst.1.1.47\lib\net40\NhCodeFirst.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
@@ -58,8 +59,9 @@
     <Reference Include="NHibernate.Instantiation">
       <HintPath>..\packages\NHibernate.Instantiation.1.0.4295.27506\lib\net40\NHibernate.Instantiation.dll</HintPath>
     </Reference>
-    <Reference Include="Noodles, Version=1.1.184.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Noodles.1.1.184\lib\net40\Noodles.dll</HintPath>
+    <Reference Include="Noodles, Version=1.1.210.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Noodles.1.1.210\lib\net40\Noodles.dll</HintPath>
     </Reference>
     <Reference Include="ObjectFac">
       <HintPath>..\packages\ObjectFac.1.0.4386.21556\lib\net40\ObjectFac.dll</HintPath>
@@ -79,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\AdminOnlyAttribute.cs" />
-    <Compile Include="Helpers\PronounceablePasswordGenerator.cs" />
     <Compile Include="Helpers\SystemTime.cs" />
     <Compile Include="Infrastructure\Email.cs" />
     <Compile Include="Infrastructure\NHibernateConfigurator.cs" />

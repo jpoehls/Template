@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security;
 using System.Web;
@@ -64,7 +65,7 @@ namespace Project1.Web.Controllers
         // POST: /Account/LogOn
 
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public ActionResult LogOn(LogOnModel model, [DataType("Hidden")]string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -239,18 +240,38 @@ namespace Project1.Web.Controllers
                 return RedirectToAction("InvalidResetPasswordRequest", "Account");
             }
 
-            var password = user.ResetPassword();
-            var link = Url.Action("ChangePassword", "Account");
-            UserSession.Notify("New password: " + password +
-                ", reset link: http://" + Request.Url.Authority + link);
-
-            return RedirectToAction("NewPasswordSent");
+            return View();
         }
 
-        [HttpGet]
-        public ActionResult NewPasswordSent()
+
+        [HttpPost]
+        public ActionResult ResetPassword([DataType("Hidden")] string code, ResetPasswordModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var user = _session.Query<User>().SingleOrDefault(x => x.PasswordResetCode == code);
+            if (user == null)
+            {
+                return RedirectToAction("InvalidResetPasswordRequest", "Account");
+            }
+
+            if (user.PasswordResetCodeRequestedAt == null ||
+                (DateTime.Now - user.PasswordResetCodeRequestedAt.Value).Days >= 3)
+            {
+                // REVIEW: add some explanation that the code expired?
+                return RedirectToAction("InvalidResetPasswordRequest", "Account");
+            }
+
+            user.ClearPasswordResetCode();
+            user.Password.SetPassword(model.NewPassword);
+            _session.Save(user);
+            _session.Flush();
+
+            FormsAuthentication.SetAuthCookie(user.Id.ToString(), false);
+            return RedirectToAction("ChangePasswordSuccess");
         }
 
         [HttpGet]

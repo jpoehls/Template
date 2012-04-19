@@ -49,15 +49,11 @@ namespace Project1.Core.Domain
             return this.PasswordResetCode;
         }
 
-        public virtual string ResetPassword()
+        public virtual void ClearPasswordResetCode()
         {
-            var password = PronounceablePasswordGenerator.Generate(8);
-            this.Password = password;
             this.PasswordResetCode = null;
             this.PasswordResetCodeRequestedAt = null;
             _session.Save(this);
-            _session.Flush();
-            return password;
         }
         #endregion
 

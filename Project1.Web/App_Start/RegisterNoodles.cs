@@ -17,8 +17,8 @@ namespace Project1.Web.App_Start
         {
             GlobalFilters.Filters.Add(new GlobalFixUserExceptionsAttribute());
             GlobalFilters.Filters.Add(new ModelStateTempDataTransferAttribute());
-            GlobalFilters.Filters.Add(new HandleErrorAttribute());
-            Noodles.NodeMethodsExtension.ShowMethodRules.Insert(0,
+            
+            Noodles.NodeMethodsRuleRegistry.ShowMethodRules.Insert(0,
                 (target, info) => Allow.Call(target, info) ? null as bool? : false);
             Noodles.NoodleResultBuilderExtension.AddExceptionHandler<ValidationException>((ex, cc) =>
             {

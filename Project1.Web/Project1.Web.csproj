@@ -40,8 +40,9 @@
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="FormFactory">
-      <HintPath>..\packages\FormFactory.1.1.83\lib\net40\FormFactory.dll</HintPath>
+    <Reference Include="FormFactory, Version=1.1.85.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FormFactory.1.1.85\lib\net40\FormFactory.dll</HintPath>
     </Reference>
     <Reference Include="Harden">
       <HintPath>..\packages\Harden.1.1.10\lib\net40\Harden.dll</HintPath>
@@ -83,11 +84,13 @@
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="Noodles">
-      <HintPath>..\packages\Noodles.1.1.184\lib\net40\Noodles.dll</HintPath>
+    <Reference Include="Noodles, Version=1.1.210.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Noodles.1.1.210\lib\net40\Noodles.dll</HintPath>
     </Reference>
-    <Reference Include="Noodles.Web">
-      <HintPath>..\packages\Noodles.Web.1.1.184\lib\net40\Noodles.Web.dll</HintPath>
+    <Reference Include="Noodles.Web, Version=1.1.210.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Noodles.Web.1.1.210\lib\net40\Noodles.Web.dll</HintPath>
     </Reference>
     <Reference Include="ObjectFac">
       <HintPath>..\packages\ObjectFac.1.0.4386.21556\lib\net40\ObjectFac.dll</HintPath>
@@ -390,9 +393,6 @@
     <Content Include="Views\Account\PasswordResetSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\NewPasswordSent.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Account\InvalidResetPasswordRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -441,16 +441,7 @@
     <Content Include="Views\Shared\FormFactory\Form.Start.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\FormFactory\Form.Property.Inline.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\FormFactory\Form.Property.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\FormFactory\Form.Property.Block.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\FormFactory\Form.Close.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\FormFactory\Form.Actions.cshtml" />
@@ -473,10 +464,13 @@
     <None Include="Scripts\DataTables-1.9.0\extras\Scroller\media\js\Scroller.min.js.gz" />
     <None Include="Scripts\DataTables-1.9.0\extras\TableTools\media\js\TableTools.min.js.gz" />
     <Content Include="Views\Shared\DataTable.cshtml" />
+    <Content Include="Views\Shared\FormFactory\Form.Close.cshtml" />
     <Content Include="Views\Shared\Object.cshtml" />
     <Content Include="Views\Shared\Noodles\NodeMethodSuccess.cshtml" />
     <Content Include="Views\Shared\Noodles\NodeMethods.cshtml" />
     <Content Include="Views\Shared\Noodles\NodeMethod.cshtml" />
+    <Content Include="Views\Shared\Noodles\_AjaxLayout.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
